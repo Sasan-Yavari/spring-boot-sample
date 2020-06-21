@@ -1,0 +1,19 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb;Mode=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    platform: h2
+    continue-on-error: true
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: create-drop
+
+com:
+  weather:
+    client: openweathermap
+    openweathermap:
+      url: http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={apikey}
+      api_key: 55275271ea0af5d2ae5596dd0c5e2687

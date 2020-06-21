@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: weather-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    initialization-mode: always
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+com:
+  weather:
+    client: openweathermap
+    openweathermap:
+      url: http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={apikey}
+      api_key: PUT_YOUR_API_KEY_HERE
